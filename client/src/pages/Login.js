@@ -38,11 +38,29 @@ const Login = () => {
       >
         <h3 className="text-center">Login From</h3>
 
-        <Form.Item label="Email" name="email">
-          <Input type="email" required />
+        <Form.Item
+          label="Email"
+          name="email"
+          rules={[
+            { required: true, message: 'Please input your email!' },
+            { type: 'email', message: 'Please enter a valid email address!' },
+          ]}
+        >
+        <Input placeholder="Enter your email" className="form-input" />
         </Form.Item>
-        <Form.Item label="Password" name="password">
-          <Input type="password" required />
+
+        <Form.Item
+          label="Password"
+          name="password"
+          rules={[
+            { required: true, message: 'Please input your password!' },
+            { min: 6, message: 'Password must be at least 6 characters long!' },
+          ]}
+        >
+          <Input.Password
+            placeholder="Enter your password"
+            className="form-input"
+          />
         </Form.Item>
         <Link to="/register" className="m-2">
           Not a user Register here

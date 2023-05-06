@@ -42,7 +42,7 @@ const loginController = async (req, res) => {
     if (!isMatch) {
       return res
         .status(200)
-        .send({ message: "Invlid EMail or Password", success: false });
+        .send({ message: "Invlid Email or Password", success: false });
     }
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
       expiresIn: "1d",
@@ -188,7 +188,7 @@ const bookeAppointmnetController = async (req, res) => {
     const user = await userModel.findOne({ _id: req.body.doctorInfo.userId });
     user.notifcation.push({
       type: "New-appointment-request",
-      message: `A nEw Appointment Request from ${req.body.userInfo.name}`,
+      message: `A new Appointment Request from ${req.body.userInfo.name}`,
       onCLickPath: "/user/appointments",
     });
     await user.save();

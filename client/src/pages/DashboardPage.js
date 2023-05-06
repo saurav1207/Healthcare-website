@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Layout from "./../components/Layout";
+import Layout from "../components/Layout";
 import { Row } from "antd";
 import DoctorList from "../components/DoctorList";
-const HomePage = () => {
+const DashboardPage = () => {
   const [doctors, setDoctors] = useState([]);
   // login user data
   const getUserData = async () => {
@@ -30,7 +30,7 @@ const HomePage = () => {
   }, []);
   return (
     <Layout>
-      <h2 className="p-3 text-center">Home Page</h2>
+      <h2 className="p-3 text-center">Dashboard</h2>
       <Row>
         {doctors && doctors.map((doctor) => <DoctorList doctor={doctor} />)}
       </Row>
@@ -38,4 +38,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default DashboardPage;

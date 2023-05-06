@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
   // =========== doctor menu ===============
   const doctorMenu = [
     {
-      name: "Home",
+      name: "Dashboard",
       path: "/",
       icon: "fa-solid fa-house",
     },
