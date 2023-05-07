@@ -30,7 +30,8 @@ const DashboardPage = () => {
   }, []);
   return (
     <Layout>
-      <h2 className="p-3 text-center">Dashboard</h2>
+      <h2 className="p-3 text-center" style={{ background: "#f2f2f2", color: "#333", fontWeight: "bold", borderRadius: "8px" }}>Dashboard</h2>
+
       <Row>
         {doctors && doctors.map((doctor) => <DoctorList doctor={doctor} />)}
       </Row>

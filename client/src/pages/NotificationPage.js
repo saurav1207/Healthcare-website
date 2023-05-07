@@ -1,10 +1,11 @@
 import React from "react";
 import Layout from "./../components/Layout";
-import { message, Tabs } from "antd";
+import { message, Tabs, Button } from "antd";
 import { useSelector, useDispatch } from "react-redux";
 import { showLoading, hideLoading } from "../redux/features/alertSlice";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import "../styles/Notification.css";
 
 const NotificationPage = () => {
   const dispatch = useDispatch();
@@ -65,44 +66,36 @@ const NotificationPage = () => {
   };
   return (
     <Layout>
-      {/* <h4 className="p-3 text-center">Notification Page</h4> */}
       <h2 className="p-3 text-center">Notification Page</h2>
-      <Tabs>
-        <Tabs.TabPane tab="UNREAD" key={0}>
+      <Tabs defaultActiveKey="0">
+        <Tabs.TabPane tab={<span style={{ paddingLeft: '15px' }}>UNREAD</span>} key="0">
           <div className="d-flex justify-content-end">
-            <h4 className="p-2 text-primary" style={{ cursor: "pointer" }} onClick={handleMarkAllRead}          >
-              Mark All Read
-            </h4>
+            <Button type="primary" style={{ marginRight: '10px' }} onClick={handleMarkAllRead}>Mark All Read</Button>
           </div>
-          {user?.notifcation.map((notificationMgs) => (
-            <div className="card" style={{ cursor: "pointer" }}>
-              <div
-                className="card-text"
-                onClick={() => navigate(notificationMgs.onClickPath)}
-              >
-                {notificationMgs.message}
+          <div className="notification-list">
+            {user?.notifcation.map((notificationMgs) => (
+              <div className="notification-item" onClick={() => navigate(notificationMgs.onClickPath)}>
+                <div className="notification-message">{notificationMgs.message}</div>
+                <div className="notification-time">{notificationMgs.time}</div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </Tabs.TabPane>
-        <Tabs.TabPane tab="READ" key={1}>
+        <Tabs.TabPane tab="READ" key="1">
           <div className="d-flex justify-content-end">
-            <h4 className="p-2 text-primary" style={{ cursor: "pointer" }} onClick={handleDeleteAllRead}          >
-              Delete All Read
-            </h4>
+            <Button type="primary" style={{ marginRight: '10px' }} onClick={handleDeleteAllRead}>Delete All Read</Button>
           </div>
-          {user?.seennotification.map((notificationMgs) => (
-            <div className="card" style={{ cursor: "pointer" }}>
-              <div
-                className="card-text"
-                onClick={() => navigate(notificationMgs.onClickPath)}
-              >
-                {notificationMgs.message}
+          <div className="notification-list">
+            {user?.seennotification.map((notificationMgs) => (
+              <div className="notification-item" onClick={() => navigate(notificationMgs.onClickPath)}>
+                <div className="notification-message">{notificationMgs.message}</div>
+                <div className="notification-time">{notificationMgs.time}</div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </Tabs.TabPane>
       </Tabs>
+
     </Layout>
   );
 };

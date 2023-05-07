@@ -53,7 +53,7 @@ const Users = () => {
 
   return (
     <Layout>
-      <h1 className="text-center m-2">Users List</h1>
+            <h2 className="p-3 text-center" style={{ background: "#f2f2f2", color: "#333", fontWeight: "bold", borderRadius: "8px" }}>Users</h2>
       <Table columns={columns} dataSource={users} />
     </Layout>
   );

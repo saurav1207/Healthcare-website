@@ -2,9 +2,10 @@ import React from "react";
 import "../styles/LayoutStyles.css";
 import { adminMenu, userMenu } from "./../Data/data";
 
+
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { Badge, message } from "antd";
+import { Badge, message, Avatar } from "antd";
 const Layout = ({ children }) => {
   const { user } = useSelector((state) => state.user);
   const location = useLocation();
@@ -72,17 +73,20 @@ const Layout = ({ children }) => {
           </div>
           <div className="content">
             <div className="header">
-              <div className="header-content" style={{ cursor: "pointer" }}>
-                <Badge
-                  count={user && user.notifcation.length}
-                  onClick={() => {
-                    navigate("/notification");
-                  }}
-                >
-                  <i class="fa-solid fa-bell"></i>
-                </Badge>
-
-                <Link to="/profile">{user?.name}</Link>
+              <div className="header-content" style={{ display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", padding: "1rem" }}>
+                <div style={{ marginRight: "auto" }}>
+                  <button className="mt-3 btn btn-primary" onClick={() => navigate("/video-call")} style={{ marginRight: "1rem" }}>
+                    <i className="fa-solid fa-video"></i>
+                    Start Video Call
+                  </button>
+                </div>
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <Badge count={user && user.notifcation.length} onClick={() => navigate("/notification")} style={{ marginRight: "0.5rem" }}>
+                    <i className="fa-solid fa-bell"></i>
+                  </Badge>
+                  <Avatar src={user?.avatar || "https://www.w3schools.com/howto/img_avatar.png"} style={{ marginRight: "0.5rem" }} />
+                  <Link to="/profile" style={{ marginRight: "0.25 rem" }}>{user?.name}</Link>
+                </div>
               </div>
             </div>
             <div className="body">{children}</div>
