@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/RegiserStyles.css";
-import { Form, Input, message } from "antd";
+import { Form, Input, message, Button } from "antd";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -58,34 +58,48 @@ const Register = () => {
     },
   ];
 
+  const passwordConfirmationRules = [
+    {
+      required: true,
+      message: "Please confirm your password",
+    },
+    ({ getFieldValue }) => ({
+      validator(_, value) {
+        if (!value || getFieldValue("password") === value) {
+          return Promise.resolve();
+        }
+        return Promise.reject("The passwords do not match");
+      },
+    }),
+  ];
   return (
-    <>
-      <div className="form-container ">
-        <Form
-          layout="vertical"
-          onFinish={onfinishHandler}
-          className="register-form"
-        >
-          <h3 className="text-center">Register From</h3>
-          <Form.Item label="Name" name="name" rules={nameRules}>
-            <Input />
-          </Form.Item>
-          <Form.Item label="Email" name="email" rules={emailRules}>
-            <Input />
-          </Form.Item>
-          <Form.Item label="Password" name="password" rules={passwordRules}>
-            <Input.Password />
-          </Form.Item>
-          <Link to="/login" className="m-2">
-            Already a user? Login Here
-          </Link>
-          <button className="btn btn-primary" type="submit">
+    <div className="form-container">
+      <Form layout="vertical" onFinish={onfinishHandler} className="register-form" compact>
+        <h3 className="form-heading">Register Form</h3>
+        <Form.Item label="Name" name="name" rules={nameRules}>
+          <Input placeholder="Enter your name" />
+        </Form.Item>
+        <Form.Item label="Email" name="email" rules={emailRules}>
+          <Input placeholder="Enter your email" />
+        </Form.Item>
+        <Form.Item label="Password" name="password" rules={passwordRules}>
+          <Input.Password placeholder="Enter your password" />
+        </Form.Item>
+        <Form.Item label="Confirm Password" name="confirmPassword" rules={passwordConfirmationRules}>
+          <Input.Password placeholder="Confirm your password" />
+        </Form.Item>
+        <Link to="/login" className="link">
+          Already a user? Login Here
+        </Link>
+        <Form.Item>
+          <Button type="primary" htmlType="submit" className="btn-register">
             Register
-          </button>
-        </Form>
-      </div>
-    </>
+          </Button>
+        </Form.Item>
+      </Form>
+    </div>
   );
+  
 };
 
 export default Register;

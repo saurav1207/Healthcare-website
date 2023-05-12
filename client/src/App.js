@@ -14,6 +14,10 @@ import Profile from "./pages/doctor/Profile";
 import BookingPage from "./pages/BookingPage";
 import Appointments from "./pages/Appointments";
 import DoctorAppointments from "./pages/doctor/DoctorAppointments";
+import LandingPage from "./pages/LandingPage";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+
 function App() {
   const { loading } = useSelector((state) => state.alerts);
   return (
@@ -78,7 +82,33 @@ function App() {
                   <Login />
                 </PublicRoute>
               }
+
             />
+            <Route
+              path="/landing-page"
+              element={
+                <PublicRoute>
+                  <LandingPage />
+                </PublicRoute>
+              }
+            />
+            <Route
+              path="/about"
+              element={
+                <PublicRoute>
+                  <About />
+                </PublicRoute>
+              }
+            />
+            <Route
+              path="/contact"
+              element={
+                <PublicRoute>
+                  <Contact />
+                </PublicRoute>
+              }
+            />
+
             <Route
               path="/register"
               element={

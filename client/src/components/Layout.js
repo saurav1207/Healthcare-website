@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
   const handleLogout = () => {
     localStorage.clear();
     message.success("Logout Successfully");
-    navigate("/login");
+    navigate("/landing-page");
   };
 
   // =========== doctor menu ===============
@@ -66,7 +66,7 @@ const Layout = ({ children }) => {
               })}
               <div className={`menu-item `} onClick={handleLogout}>
                 <i className="fa-solid fa-right-from-bracket"></i>
-                <Link to="/login">Logout</Link>
+                <Link to="/landing-page">Logout</Link>
               </div>
             </div>
           </div>

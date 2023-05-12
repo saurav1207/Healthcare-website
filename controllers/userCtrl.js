@@ -36,7 +36,7 @@ const loginController = async (req, res) => {
     if (!user) {
       return res
         .status(200)
-        .send({ message: "user not found", success: false });
+        .send({ message: "User not found", success: false });
     }
     const isMatch = await bcrypt.compare(req.body.password, user.password);
     if (!isMatch) {
@@ -79,7 +79,7 @@ const authController = async (req, res) => {
   }
 };
 
-// APpply DOctor CTRL
+// Apply DOctor CTRL
 const applyDoctorController = async (req, res) => {
   try {
     const newDoctor = await doctorModel({ ...req.body, status: "pending" });
@@ -105,7 +105,7 @@ const applyDoctorController = async (req, res) => {
     res.status(500).send({
       success: false,
       error,
-      message: "Error WHile Applying For Doctotr",
+      message: "Error While Applying For Doctotr",
     });
   }
 };
@@ -122,7 +122,7 @@ const getAllNotificationController = async (req, res) => {
     const updatedUser = await user.save();
     res.status(200).send({
       success: true,
-      message: "all notification marked as read",
+      message: "All notification marked as read",
       data: updatedUser,
     });
   } catch (error) {
@@ -152,7 +152,7 @@ const deleteAllNotificationController = async (req, res) => {
     console.log(error);
     res.status(500).send({
       success: false,
-      message: "unable to delete all notifications",
+      message: "Unable to delete all notifications",
       error,
     });
   }
@@ -172,7 +172,7 @@ const getAllDocotrsController = async (req, res) => {
     res.status(500).send({
       success: false,
       error,
-      message: "Errro WHile Fetching DOcotr",
+      message: "Error While Fetching Docotr",
     });
   }
 };
