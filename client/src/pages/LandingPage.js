@@ -6,6 +6,7 @@ import Navbar from './Navbar';
 import Hero from './Hero';
 import Testimonial from './Testinomial';
 import DiagnosticAnalysis from './DiagnosticAnalysis';
+import ProgramDirectory from './ProgramDirectory';
 
 
 const LandingPage = () => {
@@ -14,6 +15,7 @@ const LandingPage = () => {
             <Navbar />
             <Hero />
             <DiagnosticAnalysis/>
+            <ProgramDirectory/>
             <Article />
             <Testimonial />
             <Footer />

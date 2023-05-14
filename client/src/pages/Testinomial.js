@@ -25,7 +25,7 @@ const Testimonial = () => {
         {
             id: 4,
             name: 'Emily Brown',
-            photo: 'https://source.unsplash.com/1600x1600/?person',
+            photo: 'https://source.unsplash.com/1600x1600/?citizen',
             statement: 'HealthCare exceeded my expectations with their personalized approach to patient care. Thank you!',
         },
     ];
