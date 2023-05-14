@@ -1,0 +1,58 @@
+/* Navigation */
+.landing-page-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    background-color: #fff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.landing-page-logo {
+    margin-left: 60px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.landing-page-navlinks {
+    margin-right: 60px;
+    padding-top: 12px;
+    list-style: none;
+    display: flex;
+    gap: 24px;
+}
+
+.landing-page-navlink {
+    font-size: 18px;
+    font-weight: bold;
+    color: #444;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.landing-page-navlink a {
+    color: black;
+    text-decoration: none;
+    padding: 0.5rem;
+}
+
+.landing-page-navlink a:hover {
+    color: #2196f3;
+    text-decoration: underline;
+}
+
+.landing-page-cta-btn {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #2196f3;
+    padding: 16px 24px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.landing-page-cta-btn:hover {
+    background-color: #0d8bf2;
+}

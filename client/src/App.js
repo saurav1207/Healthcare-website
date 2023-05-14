@@ -17,6 +17,8 @@ import DoctorAppointments from "./pages/doctor/DoctorAppointments";
 import LandingPage from "./pages/LandingPage";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Services from './pages/Services';
+
 
 function App() {
   const { loading } = useSelector((state) => state.alerts);
@@ -105,6 +107,14 @@ function App() {
               element={
                 <PublicRoute>
                   <Contact />
+                </PublicRoute>
+              }
+            />
+            <Route
+              path="/services"
+              element={
+                <PublicRoute>
+                  <Services />
                 </PublicRoute>
               }
             />

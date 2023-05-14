@@ -1,0 +1,120 @@
+.diagnostic-analysis-container {
+    width: 100%;
+    /* background-color: #f9f9f9; */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    max-width: 800px; 
+}
+
+
+
+.diagnostic-analysis-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 48px;
+    color: #333;
+}
+
+.diagnostic-analysis-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.diagnostic-analysis-left {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 20px;
+}
+
+.symptom-description {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.symptom-label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    line-height: 1.5;
+    color: #666;
+}
+
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.clear-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.clear-button :hover {
+    background-color: #a71b2e;
+}
+
+.diagnose-button{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.diagnose-button:hover {
+    background-color: #0056b3;
+}
+
+
+
+.diagnostic-analysis-right {
+    flex: 1;
+    width: calc(100% - 340px);
+}
+
+.diagnosis-result-container {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.diagnosis-result {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.home-remedies-heading {
+    margin-top: 18px;
+    font-weight: bold;
+}
+
+.home-remedies-list {
+    margin-top: 10px;
+    padding-left: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+}
+
+.recommendation-text {
+    margin-top: 20px;
+    font-style: italic;
+    color: #888;
+}
