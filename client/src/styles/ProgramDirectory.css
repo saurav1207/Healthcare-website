@@ -1,71 +1,84 @@
 /* ProgramDirectory.css */
 
 .program-directory {
-    max-width: 100%;
-    width: 100vw;
-    /* height: 100vh; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #f5f5f5;
-    padding: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
+
+  margin: -40px auto;
+  padding: 75px;
+  border-radius: 8px;
+}
+
+.program-directory-heading {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 48px;
+  color: #333;
   
-  .program-directory-heading {
-    text-align: center;
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 48px;
-    color: #333;
-  }
-  
-  .program-list {
-    list-style: none;
-    padding: 0;
-    text-align: center;
-    margin: 0;
-    width: 100%;
-  }
-  
-  .program-list li {
-    margin-bottom: 10px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    cursor: pointer;
-  }
-  
-  .program-list li:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .program-list li.expanded {
-    padding-bottom: 40px;
-  }
-  
-  .program-name {
-    margin-top: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 16px;
-    color: #333;
-  }
-  
-  .program-description {
-    color: #666;
-    display: none;
-    margin-top: 10px;
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  
-  .program-list li.expanded .program-description {
-    display: block;
-  }
-  
+}
+
+.program-list {
+  list-style: none;
+  padding: 0;
+}
+
+.program-list li {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.program-list li:hover {
+  background-color: #f9f9f9;
+}
+
+.program-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+.program-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.program-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.program-description {
+  margin-bottom: 12px;
+}
+
+.program-details-heading {
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.program-details-content {
+  margin-left: 16px;
+}
+
+.expanded .program-card {
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.expanded .program-name {
+  color: #007bff;
+}
+
+.expanded .program-description {
+  font-weight: bold;
+}

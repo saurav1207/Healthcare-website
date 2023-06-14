@@ -1,12 +1,14 @@
 import React from "react";
 import { Typography, Row, Col } from "antd";
 import "../styles/About.css"; // Import the custom CSS file
+import Navbar from './Navbar';
 
 const { Title, Paragraph } = Typography;
 
 const About = () => {
   return (
     <div className="about-page">
+      {/* <Navbar/> */}
       <Row justify="center" align="middle">
         <Col span={20}>
           <Title level={2} className="about-title">

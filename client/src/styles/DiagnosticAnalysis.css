@@ -1,13 +1,9 @@
 .diagnostic-analysis-container {
     width: 100%;
-    /* background-color: #f9f9f9; */
-    margin-left: auto;
+    margin-left: 12px;
     margin-right: auto;
-    padding: 20px;
-    max-width: 800px; 
+    padding: 75px;
 }
-
-
 
 .diagnostic-analysis-title {
     text-align: center;
@@ -17,35 +13,38 @@
     color: #333;
 }
 
-.diagnostic-analysis-flex {
-    display: flex;
-    justify-content: space-between;
-}
-
+.diagnostic-analysis-right,
 .diagnostic-analysis-left {
-    width: 300px;
+    width: 450px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-right: 20px;
-}
-
-.symptom-description {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
 }
 
 .symptom-label {
+    display: flex;
+    align-items: center;
     font-size: 16px;
     margin-bottom: 5px;
     line-height: 1.5;
     color: #666;
 }
 
+.symptom-label input {
+    margin-right: 10px;
+}
 
 input[type="checkbox"] {
     margin-right: 5px;
+}
+
+.diagnostic-analysis-flex {
+    display: flex;
+    justify-content: space-between;
 }
 
 .clear-button {
@@ -61,11 +60,11 @@ input[type="checkbox"] {
     transition: background-color 0.3s ease;
 }
 
-.clear-button :hover {
+.clear-button:hover {
     background-color: #a71b2e;
 }
 
-.diagnose-button{
+.diagnose-button {
     display: block;
     width: 100%;
     padding: 10px;
@@ -82,29 +81,15 @@ input[type="checkbox"] {
     background-color: #0056b3;
 }
 
-
-
-.diagnostic-analysis-right {
-    flex: 1;
-    width: calc(100% - 340px);
-}
-
-.diagnosis-result-container {
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.diagnosis-result {
-    font-size: 20px;
-    font-weight: bold;
-}
-
+.symptom-description,
+.doctor-recommendation-heading,
 .home-remedies-heading {
-    margin-top: 18px;
+    margin-top: 5px;
     font-weight: bold;
+    margin-bottom: 10px;
 }
 
+.doctor-recommendation-list,
 .home-remedies-list {
     margin-top: 10px;
     padding-left: 20px;
@@ -118,3 +103,10 @@ input[type="checkbox"] {
     font-style: italic;
     color: #888;
 }
+
+.no-recommendation-text {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #666;
+}
+

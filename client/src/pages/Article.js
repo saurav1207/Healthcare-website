@@ -47,35 +47,43 @@ const Article = () => {
     };
     return (
         <div>
-            {/* Article section */}
-            <section className="article-section">
-                <h2>Healthcare Articles</h2>
-                <div className="article-list">
-                    {articles.map((article) => (
-                        <div className="article-card" key={article.id}>
-                            <img src={article.imageUrl} alt={article.title} />
-                            <h3>{article.title.slice(0, 50)}...</h3>
-                            <p>By {article.writer}</p>
-                            <p>{article.content.slice(0, 100)}...</p>
-                            <button onClick={() => openArticle(article.id)}>Read More</button>
-                        </div>
-                    ))}
+        {/* Article section */}
+        <section className="article-section">
+          <h2>Healthcare Articles</h2>
+          <div className="article-list">
+            {articles.map((article) => (
+              <div className="article-card" key={article.id}>
+                <img src={article.imageUrl} alt={article.title} />
+                <div className="article-info">
+                  <h3>{article.title.slice(0, 50)}...</h3>
+                  <p>By {article.writer}</p>
                 </div>
-            </section>
-            {selectedArticle && (
-                <div className="article-modal">
-                    <div className="article-modal-content">
-                        <button className="close-icon" onClick={closeArticle}>
-                            Close
-                        </button>
-                        <img src={selectedArticle.imageUrl} alt={selectedArticle.title} />
-                        <h3 style={{ fontWeight: 'bold' }}>{selectedArticle.title}</h3>
-                        <p>By {selectedArticle.writer}</p>
-                        <p style={{ fontSize: '18px' }}>{selectedArticle.content}</p>
-                    </div>
+                <button onClick={() => openArticle(article.id)}>Read More</button>
+              </div>
+            ))}
+          </div>
+        </section>
+      
+        {/* Article modal */}
+        {selectedArticle && (
+          <div className="article-modal">
+            <div className="article-modal-content">
+              <button className="close-icon" onClick={closeArticle}>
+                Close
+              </button>
+              <div className="modal-header">
+                <img src={selectedArticle.imageUrl} alt={selectedArticle.title} />
+                <div className="modal-info">
+                  <h3 style={{ fontWeight: 'bold' }}>{selectedArticle.title}</h3>
+                  <p>By {selectedArticle.writer}</p>
                 </div>
-            )}
-        </div>
+              </div>
+              <div className="modal-content">{selectedArticle.content}</div>
+            </div>
+          </div>
+        )}
+      </div>
+      
     );
 }
 
